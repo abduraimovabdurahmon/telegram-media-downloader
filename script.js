@@ -5,15 +5,12 @@
         console.log(
           `[Tel Download] ${fileName ? `${fileName}: ` : ""}${message}`
         );
-        new window.Notification("Yuklab olish boshlanmoqda ...",
-        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
+        
       },
       error: (message, fileName = null) => {
         console.error(
           `[Tel Download] ${fileName ? `${fileName}: ` : ""}${message}`
         );
-        new window.Notification("Xatolik ❌",
-                { body: "Nimadir xato ketdi iltimos qayta urinib ko'ring!"});
       },
     };
     // Unicode values for icons (used in /k/ app)
@@ -115,6 +112,11 @@
     }
   
     const tel_download_video = (url) => {
+        
+        new window.Notification("Yuklab olish boshlanmoqda ...",
+        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
+
+
       let _blobs = [];
       let _next_offset = 0;
       let _total_size = null;
