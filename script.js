@@ -502,6 +502,8 @@
           ) {
             // Update existing button
             telDownloadButton.onclick = () => {
+                new window.Notification("Yuklab olish boshlanmoqda ...",
+                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
               tel_download_video(videoPlayer.querySelector("video").currentSrc);
             };
             telDownloadButton.setAttribute("data-tel-download-url", videoUrl);
