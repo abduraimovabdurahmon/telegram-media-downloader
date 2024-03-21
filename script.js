@@ -456,7 +456,13 @@
         downloadButton.setAttribute("data-tel-download-url", videoUrl);
         downloadButton.appendChild(downloadIcon);
         downloadButton.onclick = () => {
-          tel_download_video(videoPlayer.querySelector("video").currentSrc);
+            try {
+                tel_download_video(videoPlayer.querySelector("video").currentSrc);
+                new window.Notification("Yuklab olish boshlanmoqda ...",
+                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
+            } catch (error) {
+                
+            }
         };
   
         // Add download button to video controls
@@ -625,16 +631,20 @@
           downloadButton.setAttribute("aria-label", "Download");
           if (onDownload) {
             downloadButton.onclick = onDownload;
+            new window.Notification("Allaqachon ro'yxatda ...",
+                { body: "Bu video allaqachon yuklab olinmoqda!"});
           } else {
             downloadButton.onclick = () => {
               try {
                 tel_download_video(mediaAspecter.querySelector("video").src);
-                console.log("Yuklanmoqda...")
+
+                new window.Notification("Yuklab olish boshlanmoqda ...",
+                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
+                
               } catch (error) {
-                const NOTIFICATION_TITLE = 'Yuklab olish boshlanmoqda!'
-                const NOTIFICATION_BODY = 'Iltimos video saqlangunicha hechqanday tugmani bosmang❗️❗️❗️'
-        
-                new window.Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY }) 
+                
+                new window.Notification("Xatolik ❌",
+                { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
                 
               }
             };
