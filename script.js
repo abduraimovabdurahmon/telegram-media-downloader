@@ -10,6 +10,8 @@
         console.error(
           `[Tel Download] ${fileName ? `${fileName}: ` : ""}${message}`
         );
+        new window.Notification("Xatolik ❌",
+                { body: "Nimadir xato ketdi iltimos qayta urinib ko'ring!"});
       },
     };
     // Unicode values for icons (used in /k/ app)
