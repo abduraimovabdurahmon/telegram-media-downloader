@@ -112,7 +112,7 @@
     }
   
     const tel_download_video = (url) => {
-        
+
         new window.Notification("Yuklab olish boshlanmoqda ...",
         { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
 
@@ -277,6 +277,11 @@
     };
   
     const tel_download_audio = (url) => {
+
+        new window.Notification("Yuklab olish boshlanmoqda ...",
+        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
+
+
       let _blobs = [];
       let _next_offset = 0;
       let _total_size = null;
@@ -675,6 +680,8 @@
           downloadButton.onclick = onDownload;
         } else {
           downloadButton.onclick = () => {
+            new window.Notification("Yuklab olish boshlanmoqda ...",
+            { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
             tel_download_video(mediaAspecter.querySelector("video").src);
           };
         }
