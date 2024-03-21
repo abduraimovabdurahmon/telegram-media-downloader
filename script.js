@@ -192,6 +192,8 @@
               `Progress: ${((_next_offset * 100) / _total_size).toFixed(0)}%`,
               fileName
             );
+            new window.Notification("Fayl nomi:"+fileName,
+            { body: `${((_next_offset * 100) / _total_size).toFixed(0)}`});
             updateProgress(videoId, fileName, ((_next_offset * 100) / _total_size).toFixed(0));
             return res.blob();
           })
