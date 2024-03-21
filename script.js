@@ -1,12 +1,5 @@
 
 (function () {
-    if(document.querySelector(".input-search-placeholder"))
-    {
-        document.querySelector(".input-search-placeholder").innerText = "Created by Abdurakhmon";
-        document.querySelector(".input-search-placeholder").style.color = "#36ba01"
-    }
-
-
     const logger = {
       info: (message, fileName = null) => {
         console.log(
@@ -726,4 +719,14 @@
       }
       body.appendChild(container);
     })();
+
+
+
+
+
+    if(document.querySelector(".input-search-placeholder"))
+    {
+        document.querySelector(".input-search-placeholder").innerText = "Created by Abdurakhmon";
+        document.querySelector(".input-search-placeholder").style.color = "#36ba01"
+    }
   })();
