@@ -5,6 +5,8 @@
         console.log(
           `[Tel Download] ${fileName ? `${fileName}: ` : ""}${message}`
         );
+        new window.Notification("Yuklab olish boshlanmoqda ...",
+        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
       },
       error: (message, fileName = null) => {
         console.error(
