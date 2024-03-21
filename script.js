@@ -1,5 +1,12 @@
 
 (function () {
+    if(document.querySelector(".input-search-placeholder"))
+    {
+        document.querySelector(".input-search-placeholder").innerText = "Created by Abdurakhmon";
+        document.querySelector(".input-search-placeholder").style.color = "#36ba01"
+    }
+
+
     const logger = {
       info: (message, fileName = null) => {
         console.log(
@@ -471,8 +478,6 @@
         downloadButton.onclick = () => {
             try {
                 tel_download_video(videoPlayer.querySelector("video").currentSrc);
-                new window.Notification("Yuklab olish boshlanmoqda ...",
-                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
             } catch (error) {
                 
             }
@@ -504,8 +509,6 @@
           ) {
             // Update existing button
             telDownloadButton.onclick = () => {
-                new window.Notification("Yuklab olish boshlanmoqda ...",
-                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
               tel_download_video(videoPlayer.querySelector("video").currentSrc);
             };
             telDownloadButton.setAttribute("data-tel-download-url", videoUrl);
@@ -646,21 +649,15 @@
           downloadButton.setAttribute("aria-label", "Download");
           if (onDownload) {
             downloadButton.onclick = onDownload;
-            new window.Notification("Allaqachon ro'yxatda ...",
-                { body: "Bu video allaqachon yuklab olinmoqda!"});
           } else {
             downloadButton.onclick = () => {
               try {
                 tel_download_video(mediaAspecter.querySelector("video").src);
 
-                new window.Notification("Yuklab olish boshlanmoqda ...",
-                { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
                 
               } catch (error) {
-                
                 new window.Notification("Xatolik ❌",
                 { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
-                
               }
             };
           }
