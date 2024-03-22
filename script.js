@@ -113,10 +113,6 @@
   
     const tel_download_video = (url) => {
 
-        new window.Notification("Yuklab olish boshlanmoqda ...",
-        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
-
-
       let _blobs = [];
       let _next_offset = 0;
       let _total_size = null;
@@ -192,8 +188,7 @@
               `Progress: ${((_next_offset * 100) / _total_size).toFixed(0)}%`,
               fileName
             );
-            new window.Notification("Fayl nomi:"+fileName,
-            { body: `${((_next_offset * 100) / _total_size).toFixed(0)}`});
+            
             updateProgress(videoId, fileName, ((_next_offset * 100) / _total_size).toFixed(0));
             return res.blob();
           })
@@ -279,10 +274,6 @@
     };
   
     const tel_download_audio = (url) => {
-
-        new window.Notification("Yuklab olish boshlanmoqda ...",
-        { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
-
 
       let _blobs = [];
       let _next_offset = 0;
@@ -646,9 +637,10 @@
             downloadButton.onclick = () => {
               try {
                 tel_download_video(mediaAspecter.querySelector("video").src);
-
-                
               } catch (error) {
+
+                window?.ReactNativeWebView.postMessage("Hello from the website");
+
                 new window.Notification("Xatolik ❌",
                 { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
               }
@@ -674,8 +666,6 @@
           downloadButton.onclick = onDownload;
         } else {
           downloadButton.onclick = () => {
-            new window.Notification("Yuklab olish boshlanmoqda ...",
-            { body: "Iltimos yuklab olish yakunlanmagunicha hechqaysi tugmani bosmang!"});
             tel_download_video(mediaAspecter.querySelector("video").src);
           };
         }
