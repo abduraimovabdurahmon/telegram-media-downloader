@@ -465,7 +465,8 @@
             try {
                 tel_download_video(videoPlayer.querySelector("video").currentSrc);
             } catch (error) {
-                
+              new window.Notification("Xatolik ❌",
+                { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
             }
         };
   
@@ -640,9 +641,6 @@
               try {
                 tel_download_video(mediaAspecter.querySelector("video").src);
               } catch (error) {
-
-                window?.ReactNativeWebView.postMessage("Hello from the website");
-
                 new window.Notification("Xatolik ❌",
                 { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
               }
