@@ -132,6 +132,8 @@
         }
       } catch (e) {
         // Invalid JSON string, pass extracting fileName
+        new window.Notification("Xatolik ❌",
+        { body: "Iltimos yuqoridagi tugmadan foydalanib ko\'ring!"});
       }
       logger.info(`URL: ${url}`, fileName);
   
